@@ -35,10 +35,15 @@ namespace Oculus.Interaction
         private UnityEvent _onTransfer;
         [SerializeField]
         private UnityEvent _onUpdate;
+        
+        [SerializeField]
+        private UnityEvent _onGrab;
 
         public UnityEvent OnAdd => _onAdd;
         public UnityEvent OnRemove => _onRemove;
         public UnityEvent OnUpdate => _onUpdate;
+        
+        public UnityEvent OnGrab => _onGrab;
 
         protected bool _started = false;
 
@@ -81,6 +86,7 @@ namespace Oculus.Interaction
                 case GrabbableEvent.Remove:
                     _onRemove.Invoke();
                     break;
+                
                 default:
                     break;
             }
