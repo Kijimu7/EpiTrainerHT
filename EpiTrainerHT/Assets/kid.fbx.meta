@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 317a56890b5c8e74ab1d492a2c7fb608
+guid: 0ebbbec381d72e14583e939e5846ec1a
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: DummyMaterial__DummyTexture
-    second: {fileID: 2100000, guid: bd0bb729cb6159b4ab21c5f62cad24ee, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
