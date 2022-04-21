@@ -8,11 +8,17 @@ public class CollisionManager : MonoBehaviour
     public GameObject TipTooltip;
     private AudioSource audioSource;
     private AudioClip ButtonUp;
+    public Canvas canvas; 
+    public CountDownTimer contDownTimer; //getting reference from CountDownTimer class
+   
  
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+       
+        GameObject tempObject = GameObject.Find("Canvas");
+        contDownTimer = tempObject.GetComponent<CountDownTimer>();
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -27,12 +33,13 @@ public class CollisionManager : MonoBehaviour
             Rigidbody tipRidgidbody = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 forceDirection = collision.gameObject.transform.position;
              tipRidgidbody.AddForce(forceDirection * 10, ForceMode.Force);
-            
-            
+             
              audioSource.Play();
-            
+             contDownTimer.enabled = true;
+
 
         }
+        
     }
 
 }
