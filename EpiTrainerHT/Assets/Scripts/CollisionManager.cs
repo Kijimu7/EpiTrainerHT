@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionManager : MonoBehaviour
 {
     public GameObject ThighTooltip;
+    public GameObject TipTooltip;
     void OnCollisionEnter(Collision collision)
     {
      
@@ -14,7 +15,9 @@ public class CollisionManager : MonoBehaviour
         {
             //If the GameObject has the same tag as specified, output this message in the console
             ThighTooltip.SetActive(true);
-            Debug.Log("Do something");
+            Destroy(TipTooltip);
+            
+            
             
         }
     }
