@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.DirectoryServices.Protocols;
+using TMPro;
 using UnityEngine;
 
 public class CollisionManager : MonoBehaviour
@@ -8,17 +10,27 @@ public class CollisionManager : MonoBehaviour
     public GameObject TipTooltip;
     private AudioSource audioSource;
     private AudioClip ButtonUp;
-    public Canvas canvas; 
     public CountDownTimer contDownTimer; //getting reference from CountDownTimer class
-   
- 
+    private TextMeshProUGUI removeTxt;
+    public ChangeText changeTxt; //getting reference from ChangeText class
+    public TextMeshProUGUI ChgTxt;
+    private GameObject tempObject;
+    
+    
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
        
-        GameObject tempObject = GameObject.Find("Canvas");
+         tempObject = GameObject.Find("Canvas");
         contDownTimer = tempObject.GetComponent<CountDownTimer>();
+       changeTxt = tempObject.GetComponent<ChangeText>();
+        
+        
+        
+        // changeTxt = tempObject.GetComponent<ChangeText>();
+
+
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -36,6 +48,9 @@ public class CollisionManager : MonoBehaviour
              
              audioSource.Play();
              contDownTimer.enabled = true;
+             
+
+
 
 
         }
