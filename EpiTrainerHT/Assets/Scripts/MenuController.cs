@@ -9,6 +9,6 @@ public class MenuController : MonoBehaviour
    public void StartBtn()
    {
       //Loading Training Scene
-      SceneManager.LoadScene("MainScene");
+      SceneManager.LoadScene("Training");
    }
 }
